@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21bce1255-js7</title>      
+    <style>
+        body{
+            margin-top: 200px;
+        }
+        p{
+            color: darkblue;
+            font-size:30px;
+            font-weight: 800;
+        }
+        img{
+            margin-left: 100px;
+        }
+      </style>
+      <script type = "text/javascript">
+            var imgObj = null;
+            var animate ;
+            
+            function init() {
+               imgObj = document.getElementById('myImage');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.left = '0px'; 
+            }
+            function moveRight() {
+               imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+               animate = setTimeout(moveRight,20);   
+            }
+            function stop() {
+               clearTimeout(animate);
+               imgObj.style.left = '0px'; 
+            }
+            
+            window.onload = init;
+         
+      </script>
+   </head>
+   
+   <body>  
+    
+    <form>
+         <img id = "myImage" src = "train_img.png" />
+    <center>
+         <p>Click the buttons below to handle animation</p>
+         <input type = "button" value = "Start" onclick = "moveRight();" />
+         <input type = "button" value = "Stop" onclick = "stop();" />
+      </form> 
+    </center>      
+   </body>
+</html>
